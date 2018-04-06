@@ -12,7 +12,4 @@ class TestGuest < MiniTest::Test
         assert_equal("Liam", @guest1.name)
     end
 
-    def test_guest_checks_in()
-        assert_equal()
-    end
 end
