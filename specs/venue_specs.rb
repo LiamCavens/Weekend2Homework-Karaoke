@@ -4,6 +4,7 @@ require_relative('../room.rb')
 require_relative('../guest.rb')
 require_relative('../song.rb')
 require_relative('../venue.rb')
+require_relative('../drink.rb')
 
 class VenueTest < MiniTest::Test
 
@@ -18,7 +19,11 @@ class VenueTest < MiniTest::Test
         @room1 = Room.new("Disco", songs, 3)
         @room2 = Room.new("Dance", songs2, 6)
         rooms = [@room1, @room2]
-        @venue1 = Venue.new("The Squealling Giraffe", 100, rooms)
+        @drink1 = Drink.new("Lager", 1.00)
+        @drink2 = Drink.new("Wine", 5.00)
+        @drink3 = Drink.new("Vodka", 3.00)
+        drinks = [@drink1, @drink2, @drink3]
+        @venue1 = Venue.new("The Squealling Giraffe", 100, rooms, 5, drinks)
 
     end
 
@@ -32,5 +37,9 @@ class VenueTest < MiniTest::Test
 
     def test_how_many_rooms_venue_has()
         assert_equal(2, @venue1.rooms.count)
+    end
+
+    def test_take_money_on_entry()
+        assert_equal(105, @venue1.take_money_on_entry())
     end
 end
