@@ -43,4 +43,17 @@ class TestGuest < MiniTest::Test
         assert_equal("This Tunes ma favourite, pure belter", @guest1.guests_favourite_tune_comes_on(@song1))
     end
 
+    def test_guest_gets_drink()
+        @guest1.guest_gets_drink(@drink1)
+        assert_equal(1, @guest1.get_drink_in_drink_tab())
+    end
+
+    def test_pay_for_tab__remove_money_from_wallet()
+        @guest1.guest_gets_drink(@drink1)
+        @guest1.guest_gets_drink(@drink2)
+        @guest1.guest_gets_drink(@drink3)
+        @guest1.guest_pays_for_tab()
+         assert_equal(11, @guest1.wallet)
+    end
+
 end

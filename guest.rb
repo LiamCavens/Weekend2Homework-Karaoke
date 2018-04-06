@@ -24,4 +24,18 @@ class Guest
             return "Tunes alright but I'll sing it"
         end
     end
+
+    def guest_gets_drink(drink)
+       return @drink_tab.push(drink)
+    end
+
+    def get_drink_in_drink_tab()
+        return @drink_tab.length()
+    end
+
+    def guest_pays_for_tab()
+        for drink in @drink_tab
+            @wallet -= drink.price
+        end
+    end
 end
