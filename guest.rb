@@ -6,4 +6,8 @@ class Guest
         @name = name
     end
 
+    def guest_check_in()
+        
+    end
+
 end
