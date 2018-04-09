@@ -9,6 +9,8 @@ require_relative('../drink.rb')
 class VenueTest < MiniTest::Test
 
     def setup()
+        @guest1 = Guest.new("Liam", 20, "Babel", 25)
+        @guest3 = Guest.new("Jamie", 15, "It's Alright", 12)
         @song1 = Song.new("Babel", "Mumford & Sons")
         @song2 = Song.new("In the Morning", "Razorlight")
         @song3 = Song.new("Save Tonight", "Cherry Eyed Eagle")
@@ -41,5 +43,13 @@ class VenueTest < MiniTest::Test
 
     def test_take_money_on_entry()
         assert_equal(105, @venue1.take_money_on_entry())
+    end
+
+    def test_if_customer_old_enough__enter()
+        assert_equal("Welcome to The Squealling Giraffe", @venue1.guest_entry_age(@guest1))
+    end
+
+    def test_if_customer_old_enough_underage()
+        assert_equal("Fuck off", @venue1.guest_entry_age(@guest3))
     end
 end

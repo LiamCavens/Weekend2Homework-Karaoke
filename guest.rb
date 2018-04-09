@@ -1,12 +1,13 @@
 class Guest
 
-    attr_reader :name, :wallet, :favourite_tune
+    attr_reader :name, :wallet, :favourite_tune, :age
 
-    def initialize(name, wallet, favourite_tune)
+    def initialize(name, wallet, favourite_tune, age)
         @name = name
         @wallet = wallet
         @favourite_tune = favourite_tune
         @drink_tab = []
+        @age = age
     end
 
     def give_money_on_entry(venue)

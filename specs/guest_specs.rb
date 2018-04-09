@@ -9,7 +9,7 @@ require_relative('../drink.rb')
 class TestGuest < MiniTest::Test
     
     def setup()
-        @guest1 = Guest.new("Liam", 20, "Babel")
+        @guest1 = Guest.new("Liam", 20, "Babel", 25)
         @song1 = Song.new("Babel", "Mumford & Sons")
         @song2 = Song.new("In the Morning", "Razorlight")
         @song3 = Song.new("Save Tonight", "Cherry Eyed Eagle")
